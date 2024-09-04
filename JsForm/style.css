@@ -56,6 +56,7 @@ textarea {
 .form-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Adjust layout on smaller screens */
 }
 
 .radio-group {
@@ -89,7 +90,6 @@ table {
 th, td {
   border: 1px solid #ddd;
   padding: 12px;
-  /* text-align: left; */
   text-align: center;
 }
 
@@ -98,8 +98,6 @@ th {
   color: #fff;
   text-align: center;
 }
-
-
 
 #userModal {
   display: none;
@@ -122,7 +120,6 @@ th {
   max-height: 80%; 
 }
 
-
 #confirm {
   display: flex;
   flex-direction: column;
@@ -138,30 +135,67 @@ th {
   margin-top: 10px;
 }
 
-#confirmation{
+#confirmation {
   width: 20px;
 }
 
-div  button{
+div button {
   margin: 2px;
   text-align: center;
   font-weight: bold;
 }
 
-td div{
+td div {
   text-align: center;
 }
 
-#editForm button{
+#editForm button {
   background-color: rgb(255, 13, 13);
   height: 40px;
   margin-top: 20px;
-  
 }
 
-#deleteButton{
+#deleteButton {
   background-color: red;
   font-weight: bold;
 }
 
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
 
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .form-row {
+    flex-direction: column; /* Stack form fields vertically */
+  }
+
+  .radio-group {
+    flex-direction: column; /* Stack radio buttons vertically */
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  #userModal {
+    width: 90%;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  #modalContent {
+    max-height: 70%;
+  }
+}
